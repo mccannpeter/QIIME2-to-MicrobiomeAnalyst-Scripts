@@ -3,7 +3,7 @@
 ###############################################################################
 
 #Find and copy fastq.gz files to working directory
-find /path/to/fastq/files -type f -name "*.fastq.gz" -exec cp {} . \;
+find /users/40179895/sharedscratch/bethany_qiime/raw_reads/fastq -type f -name "*.fastq.gz" -exec cp {} . \;
 
 
 ###############################################################################
@@ -125,7 +125,7 @@ library(decontam); packageVersion("decontam")
 [1] ‘1.24.0’
 library("biomformat")
 
-setwd("/path/to/wd")
+setwd("/Users/peter/BETHANY_RAT_PROJECT")
 
 
 ###############################################################################
@@ -175,8 +175,8 @@ head(which(contamdf.prev$contaminant))
 contamdf.prev05 <- isContaminant(ps, method = "prevalence", neg = "is.neg", threshold = 0.5)
 table(contamdf.prev05$contaminant)
 
-#FALSE  TRUE 
-#  714    89 
+FALSE  TRUE 
+  714    89 
 
 # Visualize contamination prevalence
 ps.pa <- transform_sample_counts(ps, function(abund) 1 * (abund > 0))
